@@ -1,0 +1,6 @@
+{
+  "name": "SafeStay Responder",
+  "description": "An emergency response system for guest safety featuring high-visibility panic controls and AI-powered medical matching.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

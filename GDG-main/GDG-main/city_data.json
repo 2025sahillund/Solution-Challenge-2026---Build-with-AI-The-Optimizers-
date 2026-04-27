@@ -1,0 +1,21 @@
+{
+  "city": "Mumbai",
+  "baseline_resources": {
+    "medical": 2,
+    "fire": 2,
+    "security": 2
+  },
+  "service_providers": {
+    "police": [
+      { "id": "p1", "name": "Zone 1 Precinct", "location": "South" },
+      { "id": "p2", "name": "Zone 4 Hub", "location": "North" }
+    ],
+    "fire": [
+      { "id": "f1", "name": "Main Station", "location": "Central" }
+    ],
+    "health": [
+      { "id": "h1", "name": "City General", "specialty": "Trauma" },
+      { "id": "h2", "name": "Public Health Center", "specialty": "Primary Care" }
+    ]
+  }
+}

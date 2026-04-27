@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "alert": {
+      "title": "Emergency Alert",
+      "description": "Represents an active or historical emergency alert.",
+      "type": "object",
+      "properties": {
+        "guestName": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "type": { "type": "string", "enum": ["Medical", "Fire", "Security"] },
+        "status": { "type": "string", "enum": ["Alerting Staff", "Hospital Assigned", "Ambulance En Route", "Resolved"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" }
+          }
+        },
+        "assignedHospital": { "type": "string" },
+        "aiReasoning": { "type": "string" }
+      },
+      "required": ["guestName", "roomNumber", "type", "status", "createdAt"]
+    },
+    "resource": {
+      "title": "Unit Resources",
+      "description": "Inventory of available emergency units.",
+      "type": "object",
+      "properties": {
+        "medical": { "type": "integer" },
+        "fire": { "type": "integer" },
+        "security": { "type": "integer" }
+      }
+    }
+  },
+  "firestore": {
+    "/alerts/{alertId}": {
+      "schema": "alert",
+      "description": "Collection of emergency alerts."
+    },
+    "/resources/units": {
+      "schema": "resource",
+      "description": "Singleton storing available unit counts."
+    }
+  }
+}
